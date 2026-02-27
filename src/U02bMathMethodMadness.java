@@ -116,14 +116,14 @@ public class U02bMathMethodMadness {
 
     // Enter your name: Jeremy
     System.out.print("Enter your name: ");
-    // TODO collect input
+    // DONE collect input
     String name = input.next();
 
-    // TODO print a welcome message using the user's name
+    // DONE print a welcome message using the user's name
     // Like this... Welcome Jeremy! Please answer the following questions...
     System.out.println("Welcome " + name + "! Please answer the following questions...");
 
-    // TODO make a math quiz like the following. Use the two ints from Part 1
+    // DONE make a math quiz like the following. Use the two ints from Part 1
     // You will need to use conditionals with an if and an else.
 
     // The following is an example math quiz IF the user input was 6 and 4...
@@ -171,9 +171,21 @@ public class U02bMathMethodMadness {
       System.out.println("Wrong!");
       System.out.println("The correct answer is " + (input1 % input2));
     }
-    System.out.println("You got " + (answer1 == input1 + input2 ? 1 : 0 + answer2 == input1 * input2 ? 1 : 0 + answer3 == input1 /
-                                     input2 ? 1 : 0 + answer4 == input1 % input2 ? 1 : 0) + " correct answers");
-    System.out.println("That's " + ((answer1 == input1 + input2 ? 1 : 0 + answer2 == input1 * input2 ? 1 : 0 + answer3 == input1 / 
-                                     input2 ? 1 : 0 + answer4 == input1 % input2 ? 1 : 0) / 4.0 * 100) + "%!");
+    int correctAnswers = 0;
+    if (answer1 == input1 + input2) {
+      correctAnswers++;
+    }
+    if (answer2 == input1 * input2) {
+      correctAnswers++;
+    }
+    if (answer3 == input1 / input2) {
+      correctAnswers++;
+    }
+    if (answer4 == input1 % input2) {
+      correctAnswers++;
+    }
+    System.out.println("You got " + correctAnswers + " correct answers");
+    System.out.println("That's " + (correctAnswers / 4.0 * 100) + "%!");
+    input.close();
   }
 }
